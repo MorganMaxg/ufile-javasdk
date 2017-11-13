@@ -1,5 +1,7 @@
 package cn.ucloud.ufile.sdk.test;
 
+import cn.ucloud.ufile.UFileRequest;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -8,12 +10,6 @@ import java.util.LinkedList;
 import java.util.Map;
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicInteger;
-
-import cn.ucloud.ufile.UFileClient;
-import cn.ucloud.ufile.UFileConfig;
-import cn.ucloud.ufile.UFileRequest;
-import cn.ucloud.ufile.UFileResponse;
-import cn.ucloud.ufile.sender.PutSender;
 
 /**
  * 多个线程并发进行put上传，使用短连接，保证可用性
