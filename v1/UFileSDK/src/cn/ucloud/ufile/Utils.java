@@ -139,4 +139,16 @@ public class Utils {
         return null;
     }
 
+    public static void saveTofile(InputStream inputStream, String path) throws IOException {
+        BufferedInputStream bis = new BufferedInputStream(inputStream);
+        FileOutputStream fos = new FileOutputStream(path);
+        byte[] buff = new byte[1024];
+        int length;
+        while ((length = bis.read(buff)) != -1) {
+            fos.write(buff, 0, length);
+        }
+        bis.close();
+        fos.close();
+    }
+
 }

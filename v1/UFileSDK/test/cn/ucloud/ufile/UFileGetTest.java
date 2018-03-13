@@ -15,6 +15,7 @@ public class UFileGetTest {
 		String contentType = "";
 		String contentMD5 = "";
 		String date = "";
+		String saveAsPath = "";
 
 		UFileRequest request = new UFileRequest();
 		request.setHttpMethod(httpMethod);
@@ -27,7 +28,7 @@ public class UFileGetTest {
 		ufileSDK.loadConfig(configPath);
 
 		System.out.println("[Request]\n");
-		ufileSDK.get(request, new PrintCallback());
+		ufileSDK.get(request, new SaveCallback(saveAsPath));
 
 		UFileSDK.shutdown();
 	}
